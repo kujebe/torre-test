@@ -1,0 +1,18 @@
+@import "styles/global-styles-variables.scss";
+
+.custom-button {
+  min-width: 60px;
+  letter-spacing: 0.5px;
+  line-height: 35px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: $primary-orange;
+  color: $white;
+  border-radius: 5px;
+}

@@ -4,15 +4,12 @@
   margin: 0;
 }
 body {
-  font-family: "Open Sans Condensed";
+  // font-family: "Open Sans Condensed";
+  font-family: "Open Sans Condensed", Helvetica, sans-serif;
+  font-weight: 300;
   background-color: #f7f7f7;
 }
 
 a {
   text-decoration: none;
-}
-
-.content-container {
-  padding-left: 60px;
-  padding-right: 60px;
 }

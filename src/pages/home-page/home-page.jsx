@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import PageTitle from "components/page-title/page-title.component";
-
 import Spinner from "components/spinner/spinner.component";
+import PageLayout from "components/page-layout/page-layout.component";
+import JobItem from "components/job-item/job-item.component";
 
 class HomePage extends Component {
   state = {
@@ -19,30 +19,22 @@ class HomePage extends Component {
       method: "post",
     })
       .then((response) => {
-        console.log(response.data.results);
-        const jobs = response.data.results;
-        this.setState({ jobs, isLoading: false });
+        this.setState({ jobs: response.data.results, isLoading: false });
       })
       .catch((error) => {
-        console.log("Payment Error: ", error);
+        console.log("Failed to load jobs: ", error);
       });
   }
 
   render() {
     return (
-      <div>
-        <PageTitle>Latest jobs</PageTitle>
-
+      <PageLayout title="Latest jobs">
         {this.state.isLoading ? (
           <Spinner />
         ) : (
-          <div>
-            {this.state.jobs.map((job) => (
-              <div key={job.id}>{job.status}</div>
-            ))}
-          </div>
+          this.state.jobs.map((job) => <JobItem key={job.id} job={job} />)
         )}
-      </div>
+      </PageLayout>
     );
   }
 }

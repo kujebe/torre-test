@@ -1,0 +1,42 @@
+.job-item-container {
+  height: 210px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  margin-bottom: 26px;
+  & .job-title {
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 25px;
+    font-weight: 700;
+  }
+  & .job-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    & .company {
+      display: flex;
+      flex-direction: column;
+      & .company-name-and-image {
+        display: flex;
+        align-items: center;
+        & .company-image {
+          width: 32px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    & .company-title,
+    .job-type-title,
+    .experience-title {
+      font-weight: 700;
+      color: #b6b6b6;
+      margin-bottom: 5px;
+    }
+  }
+  & .button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
