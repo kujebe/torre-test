@@ -12,11 +12,13 @@ function App() {
   return (
     <div>
       <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/professionals" component={ProfessionalsPage} />
-        <Route exact path="/companies" component={CompaniesPage} />
-      </Switch>
+      <div className="content-container">
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/professionals" component={ProfessionalsPage} />
+          <Route exact path="/companies" component={CompaniesPage} />
+        </Switch>
+      </div>
     </div>
   );
 }
