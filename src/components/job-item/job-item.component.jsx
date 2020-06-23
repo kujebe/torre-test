@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Moment from "react-moment";
 
 import CustomButton from "components/custom-button/custom-button.component";
@@ -15,17 +15,16 @@ const JobItem = ({ job }) => {
         <div className="company">
           <div className="company-title">Company</div>
           <div className="company-name-and-image">
-            {organizations[0].picture ? (
-              <img
-                className="company-image"
-                src={organizations[0].picture}
-                alt={organizations[0].name}
-              />
-            ) : (
-              ""
+            {organizations.length > 0 && (
+              <Fragment>
+                <img
+                  className="company-image"
+                  src={organizations[0].picture}
+                  alt={organizations[0].name}
+                />
+                <span>{organizations[0].name}</span>
+              </Fragment>
             )}
-
-            <span>{organizations[0].name}</span>
           </div>
         </div>
         <div className="job-type">
